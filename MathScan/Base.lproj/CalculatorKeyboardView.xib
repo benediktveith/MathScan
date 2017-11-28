@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierNewBold.ttf">
+            <string>CourierNewPS-BoldMT</string>
+        </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorKeyboardView" customModule="MathScan" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteButton" destination="Ke5-Qr-uFU" id="dhV-n1-Wbh"/>
+                <outlet property="divButton" destination="J7o-kf-869" id="Ycb-Fm-4Mq"/>
+                <outlet property="dotButton" destination="BQa-fd-Wb3" id="kDB-c0-g4j"/>
+                <outlet property="eightButton" destination="85P-Lb-89h" id="kf5-Lr-Ho8"/>
+                <outlet property="equalButton" destination="oy0-XR-mco" id="Q7D-8N-1sF"/>
+                <outlet property="fiveButton" destination="Lq6-0Y-GJj" id="SFE-hN-VIR"/>
+                <outlet property="fourButton" destination="n9C-Tl-pvv" id="4Pn-8X-OaQ"/>
+                <outlet property="minusButton" destination="XDB-aM-00i" id="A4q-gb-oa6"/>
+                <outlet property="moveLeft" destination="HiF-An-pXu" id="aun-VJ-25E"/>
+                <outlet property="moveRight" destination="baT-1W-gyk" id="cZ7-zp-EIy"/>
+                <outlet property="multButton" destination="G9j-gz-dLY" id="2vW-Co-Sa7"/>
+                <outlet property="nineButton" destination="onE-ct-Mvw" id="iRf-PV-Zsd"/>
+                <outlet property="oneButton" destination="a6y-7X-agK" id="wdj-rw-gXK"/>
+                <outlet property="plusButton" destination="5jb-rW-fge" id="3Tp-km-VA2"/>
+                <outlet property="sevenButton" destination="4So-WI-ZWk" id="7Jv-XR-CCh"/>
+                <outlet property="sixButton" destination="ked-gX-dVC" id="yPi-tC-Fqd"/>
+                <outlet property="threeButton" destination="37W-ae-s1b" id="dLe-XD-tWR"/>
+                <outlet property="twoButton" destination="14V-n9-bxx" id="1WZ-4N-uOT"/>
+                <outlet property="zeroButton" destination="MC0-MN-6qE" id="g13-r3-nn0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jb-rW-fge" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="255" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" red="0.80978515625000003" green="0.80978515625000003" blue="0.80978515625000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="3bx-Id-bYe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDB-aM-00i" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="255" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" red="0.80978515630000003" green="0.80978515630000003" blue="0.80978515630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="-">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="vLh-k8-yBc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9j-gz-dLY" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="255" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" red="0.80978515630000003" green="0.80978515630000003" blue="0.80978515630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="x">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="skj-ff-OqF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7o-kf-869" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="255" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" red="0.80978515630000003" green="0.80978515630000003" blue="0.80978515630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title=":">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="FyI-dq-xG0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-Qr-uFU" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="255" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="deleteTouched:" destination="-1" eventType="touchUpInside" id="gyi-FB-5ib"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy0-XR-mco" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="205" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="=">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="SBh-L8-hi6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onE-ct-Mvw" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="205" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="9">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="vlN-PS-lqz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ked-gX-dVC" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="205" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="6">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="FXJ-SO-Mdt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37W-ae-s1b" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="205" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="3">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="mJn-0G-p8R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcH-23-a38" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="205" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MC0-MN-6qE" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="155" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="0">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="dVg-oq-2w9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85P-Lb-89h" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="155" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="8">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="aK7-cf-vdr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lq6-0Y-GJj" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="155" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="5">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="Eoj-87-ILk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14V-n9-bxx" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="155" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="BUd-ah-OqA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baT-1W-gyk" userLabel="Right" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="155" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="0Hr-qS-751"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-right" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-FP-iNM">
+                    <rect key="frame" x="162" y="7" width="30" height="26"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="jxc-gE-Y8c"/>
+                        <constraint firstAttribute="height" constant="26" id="oj9-Oc-zhg"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQa-fd-Wb3" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="105" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title=".">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="XCU-lk-5fp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4So-WI-ZWk" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="105" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="7">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="OgW-OO-pkN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9C-Tl-pvv" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="105" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="4">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="PgI-hJ-Qxi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-7X-agK" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="105" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal" title="1">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="pQO-nD-TsC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiF-An-pXu" userLabel="Left" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="105" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouched:" destination="-1" eventType="touchUpInside" id="1Z8-BD-T2L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-kd-aav" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="55" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJM-Ab-NQS" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="55" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <state key="normal" title="x">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-RY-KH0" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="55" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A70-nO-ejo" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="55" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAe-bF-s0y" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="55" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-6Y-ZF5" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="5" y="145" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ud-uh-SPf" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="5" y="110" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW1-N5-ABN" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="5" y="75" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rU-Jg-wiW" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="5" y="40" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxe-MD-ou5" customClass="CustomCalculatorButton" customModule="MathScan" customModuleProvider="target">
+                    <rect key="frame" x="5" y="5" width="45" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-up-K9E">
+                    <rect key="frame" x="262" y="7" width="30" height="26"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="GRX-eH-dyo"/>
+                        <constraint firstAttribute="width" constant="30" id="NjK-5b-q2w"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-left" translatesAutoresizingMaskIntoConstraints="NO" id="knv-cp-5s1">
+                    <rect key="frame" x="112" y="7" width="30" height="26"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="88n-J6-1PB"/>
+                        <constraint firstAttribute="height" constant="26" id="dw8-ua-Zlj"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="a6y-7X-agK" firstAttribute="leading" secondItem="A70-nO-ejo" secondAttribute="trailing" constant="5" id="0LA-gD-QEM"/>
+                <constraint firstItem="a6y-7X-agK" firstAttribute="height" secondItem="HiF-An-pXu" secondAttribute="height" id="0bZ-Wf-QSS"/>
+                <constraint firstItem="XDB-aM-00i" firstAttribute="height" secondItem="5jb-rW-fge" secondAttribute="height" id="0eE-Si-tbD"/>
+                <constraint firstItem="SAe-bF-s0y" firstAttribute="leading" secondItem="vxe-MD-ou5" secondAttribute="trailing" constant="5" id="1RQ-Ka-ugA"/>
+                <constraint firstItem="85P-Lb-89h" firstAttribute="leading" secondItem="4So-WI-ZWk" secondAttribute="trailing" constant="5" id="1de-VT-k22"/>
+                <constraint firstItem="BQa-fd-Wb3" firstAttribute="width" secondItem="4So-WI-ZWk" secondAttribute="width" id="1fw-DC-m0C"/>
+                <constraint firstItem="14V-n9-bxx" firstAttribute="leading" secondItem="a6y-7X-agK" secondAttribute="trailing" constant="5" id="1sW-OD-9cK"/>
+                <constraint firstItem="ked-gX-dVC" firstAttribute="top" secondItem="37W-ae-s1b" secondAttribute="bottom" constant="5" id="2Hh-v9-r7k"/>
+                <constraint firstItem="1ud-uh-SPf" firstAttribute="top" secondItem="QW1-N5-ABN" secondAttribute="bottom" constant="5" id="2Yw-yB-KHr"/>
+                <constraint firstItem="ked-gX-dVC" firstAttribute="width" secondItem="onE-ct-Mvw" secondAttribute="width" id="2d5-RX-hHC"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="height" secondItem="dO5-kd-aav" secondAttribute="height" id="44I-Ty-37d"/>
+                <constraint firstItem="FAc-RY-KH0" firstAttribute="height" secondItem="A70-nO-ejo" secondAttribute="height" id="4Yu-bD-Aos"/>
+                <constraint firstItem="BQa-fd-Wb3" firstAttribute="leading" secondItem="dO5-kd-aav" secondAttribute="trailing" constant="5" id="4hx-cn-V67"/>
+                <constraint firstItem="1ud-uh-SPf" firstAttribute="height" secondItem="QW1-N5-ABN" secondAttribute="height" id="4un-Qf-Py9"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="width" secondItem="BQa-fd-Wb3" secondAttribute="width" id="64L-UT-7fL"/>
+                <constraint firstItem="QW1-N5-ABN" firstAttribute="top" secondItem="3rU-Jg-wiW" secondAttribute="bottom" constant="5" id="6dD-HX-6WZ"/>
+                <constraint firstItem="85P-Lb-89h" firstAttribute="width" secondItem="Lq6-0Y-GJj" secondAttribute="width" id="7he-ZZ-mkZ"/>
+                <constraint firstItem="3rU-Jg-wiW" firstAttribute="height" secondItem="vxe-MD-ou5" secondAttribute="height" id="8aA-FO-lSa"/>
+                <constraint firstItem="A70-nO-ejo" firstAttribute="width" secondItem="SAe-bF-s0y" secondAttribute="width" id="92F-ld-wzF"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="width" secondItem="1ud-uh-SPf" secondAttribute="width" id="9sJ-zp-KVI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oy0-XR-mco" secondAttribute="bottom" constant="5" id="AGX-1t-sTK"/>
+                <constraint firstItem="onE-ct-Mvw" firstAttribute="width" secondItem="oy0-XR-mco" secondAttribute="width" id="AWV-ey-CCD"/>
+                <constraint firstItem="J7o-kf-869" firstAttribute="leading" secondItem="37W-ae-s1b" secondAttribute="trailing" constant="5" id="Aqh-GW-80C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dO5-kd-aav" secondAttribute="bottom" constant="5" id="BrP-Rn-fcV"/>
+                <constraint firstItem="Lq6-0Y-GJj" firstAttribute="height" secondItem="85P-Lb-89h" secondAttribute="height" id="CKJ-hv-VKw"/>
+                <constraint firstItem="Ke5-Qr-uFU" firstAttribute="leading" secondItem="fcH-23-a38" secondAttribute="trailing" constant="5" id="Cqb-5u-FFQ"/>
+                <constraint firstItem="BQa-fd-Wb3" firstAttribute="top" secondItem="4So-WI-ZWk" secondAttribute="bottom" constant="5" id="DEA-wa-kgF"/>
+                <constraint firstItem="knv-cp-5s1" firstAttribute="centerX" secondItem="HiF-An-pXu" secondAttribute="centerX" id="DLk-qF-dA5"/>
+                <constraint firstItem="fcH-23-a38" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="Dho-0I-nhb"/>
+                <constraint firstItem="85P-Lb-89h" firstAttribute="top" secondItem="Lq6-0Y-GJj" secondAttribute="bottom" constant="5" id="E4F-FV-XHd"/>
+                <constraint firstItem="onE-ct-Mvw" firstAttribute="height" secondItem="ked-gX-dVC" secondAttribute="height" id="EK5-hY-0sW"/>
+                <constraint firstItem="HiF-An-pXu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="EKU-oi-7QN"/>
+                <constraint firstItem="4So-WI-ZWk" firstAttribute="leading" secondItem="PJM-Ab-NQS" secondAttribute="trailing" constant="5" id="EUZ-Na-8zg"/>
+                <constraint firstItem="G9j-gz-dLY" firstAttribute="leading" secondItem="ked-gX-dVC" secondAttribute="trailing" constant="5" id="EVV-eR-Vy4"/>
+                <constraint firstItem="G9j-gz-dLY" firstAttribute="height" secondItem="XDB-aM-00i" secondAttribute="height" id="FRy-pO-JKO"/>
+                <constraint firstItem="knv-cp-5s1" firstAttribute="centerY" secondItem="HiF-An-pXu" secondAttribute="centerY" id="FgB-67-XEy"/>
+                <constraint firstItem="14V-n9-bxx" firstAttribute="width" secondItem="baT-1W-gyk" secondAttribute="width" id="Fhk-U9-dmW"/>
+                <constraint firstItem="n9C-Tl-pvv" firstAttribute="leading" secondItem="FAc-RY-KH0" secondAttribute="trailing" constant="5" id="G3o-nk-sEd"/>
+                <constraint firstItem="14V-n9-bxx" firstAttribute="height" secondItem="Lq6-0Y-GJj" secondAttribute="height" id="GCD-u6-9Yy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5jb-rW-fge" secondAttribute="bottom" constant="5" id="GHU-Wp-Ymw"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="height" secondItem="1ud-uh-SPf" secondAttribute="height" id="Gxu-zo-C70"/>
+                <constraint firstItem="Lq6-0Y-GJj" firstAttribute="width" secondItem="14V-n9-bxx" secondAttribute="width" id="Hgf-TJ-bZ9"/>
+                <constraint firstItem="vxe-MD-ou5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="IXt-Ao-c5g"/>
+                <constraint firstItem="QW1-N5-ABN" firstAttribute="height" secondItem="3rU-Jg-wiW" secondAttribute="height" id="IZW-hE-Onx"/>
+                <constraint firstItem="W9L-FP-iNM" firstAttribute="centerX" secondItem="baT-1W-gyk" secondAttribute="centerX" id="IoB-8R-xwJ"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="height" secondItem="PJM-Ab-NQS" secondAttribute="height" id="Ith-U1-sAQ"/>
+                <constraint firstItem="14V-n9-bxx" firstAttribute="top" secondItem="baT-1W-gyk" secondAttribute="bottom" constant="5" id="K6M-vI-Myq"/>
+                <constraint firstItem="4So-WI-ZWk" firstAttribute="height" secondItem="n9C-Tl-pvv" secondAttribute="height" id="KpC-MJ-gPY"/>
+                <constraint firstItem="FAc-RY-KH0" firstAttribute="top" secondItem="A70-nO-ejo" secondAttribute="bottom" constant="5" id="LTW-nB-j3Y"/>
+                <constraint firstItem="BQa-fd-Wb3" firstAttribute="height" secondItem="4So-WI-ZWk" secondAttribute="height" id="LWq-6w-lZk"/>
+                <constraint firstItem="SAe-bF-s0y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="N8Z-BT-eke"/>
+                <constraint firstItem="oy0-XR-mco" firstAttribute="top" secondItem="onE-ct-Mvw" secondAttribute="bottom" constant="5" id="Nrr-1w-gTE"/>
+                <constraint firstItem="W9L-FP-iNM" firstAttribute="centerY" secondItem="baT-1W-gyk" secondAttribute="centerY" id="OM6-NC-nW2"/>
+                <constraint firstItem="A70-nO-ejo" firstAttribute="leading" secondItem="3rU-Jg-wiW" secondAttribute="trailing" constant="5" id="OUs-tW-Q2L"/>
+                <constraint firstItem="PJM-Ab-NQS" firstAttribute="width" secondItem="FAc-RY-KH0" secondAttribute="width" id="Okf-lc-RTX"/>
+                <constraint firstItem="A70-nO-ejo" firstAttribute="height" secondItem="SAe-bF-s0y" secondAttribute="height" id="Oy9-at-muV"/>
+                <constraint firstItem="MC0-MN-6qE" firstAttribute="width" secondItem="oy0-XR-mco" secondAttribute="width" id="Qnu-fA-uDk"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="width" secondItem="dO5-kd-aav" secondAttribute="width" id="Qoy-Pv-xzt"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="ROe-9f-xcd"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="leading" secondItem="hUO-6Y-ZF5" secondAttribute="trailing" constant="5" id="Ro1-nF-upe"/>
+                <constraint firstItem="85P-Lb-89h" firstAttribute="height" secondItem="MC0-MN-6qE" secondAttribute="height" id="SDJ-RB-0p8"/>
+                <constraint firstItem="4So-WI-ZWk" firstAttribute="top" secondItem="n9C-Tl-pvv" secondAttribute="bottom" constant="5" id="SNI-xQ-eD7"/>
+                <constraint firstItem="5jb-rW-fge" firstAttribute="leading" secondItem="oy0-XR-mco" secondAttribute="trailing" constant="5" id="Sdz-rr-ufP"/>
+                <constraint firstItem="XDB-aM-00i" firstAttribute="width" secondItem="5jb-rW-fge" secondAttribute="width" id="Sug-ql-dLh"/>
+                <constraint firstItem="a6y-7X-agK" firstAttribute="width" secondItem="HiF-An-pXu" secondAttribute="width" id="TB2-zi-HMS"/>
+                <constraint firstItem="QW1-N5-ABN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="USG-L8-mRC"/>
+                <constraint firstItem="MC0-MN-6qE" firstAttribute="leading" secondItem="BQa-fd-Wb3" secondAttribute="trailing" constant="5" id="V5F-cO-uUR"/>
+                <constraint firstItem="3rU-Jg-wiW" firstAttribute="width" secondItem="vxe-MD-ou5" secondAttribute="width" id="V8V-pg-pJy"/>
+                <constraint firstItem="37W-ae-s1b" firstAttribute="height" secondItem="fcH-23-a38" secondAttribute="height" id="VTA-hm-1UQ"/>
+                <constraint firstItem="n9C-Tl-pvv" firstAttribute="width" secondItem="a6y-7X-agK" secondAttribute="width" id="W09-fe-94i"/>
+                <constraint firstItem="J7o-kf-869" firstAttribute="height" secondItem="G9j-gz-dLY" secondAttribute="height" id="WW5-tl-pDK"/>
+                <constraint firstItem="Zz7-up-K9E" firstAttribute="centerY" secondItem="Ke5-Qr-uFU" secondAttribute="centerY" id="XS0-dy-clU"/>
+                <constraint firstItem="baT-1W-gyk" firstAttribute="leading" secondItem="HiF-An-pXu" secondAttribute="trailing" constant="5" id="XTm-MV-LpY"/>
+                <constraint firstItem="HiF-An-pXu" firstAttribute="leading" secondItem="SAe-bF-s0y" secondAttribute="trailing" constant="5" id="YPh-ob-RzN"/>
+                <constraint firstItem="hUO-6Y-ZF5" firstAttribute="top" secondItem="1ud-uh-SPf" secondAttribute="bottom" constant="5" id="YUI-bB-rnL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ke5-Qr-uFU" secondAttribute="trailing" constant="5" id="Yox-es-cMa"/>
+                <constraint firstItem="onE-ct-Mvw" firstAttribute="top" secondItem="ked-gX-dVC" secondAttribute="bottom" constant="5" id="ZMv-pf-aDO"/>
+                <constraint firstItem="1ud-uh-SPf" firstAttribute="width" secondItem="QW1-N5-ABN" secondAttribute="width" id="Zeb-7N-pSg"/>
+                <constraint firstItem="onE-ct-Mvw" firstAttribute="height" secondItem="oy0-XR-mco" secondAttribute="height" id="Zsm-D5-l2C"/>
+                <constraint firstItem="ked-gX-dVC" firstAttribute="height" secondItem="37W-ae-s1b" secondAttribute="height" id="Ztf-e9-fwt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hUO-6Y-ZF5" secondAttribute="bottom" constant="5" id="ZvL-YC-Ged"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5jb-rW-fge" secondAttribute="trailing" constant="5" id="aFm-jI-A8T"/>
+                <constraint firstItem="Lq6-0Y-GJj" firstAttribute="leading" secondItem="n9C-Tl-pvv" secondAttribute="trailing" constant="5" id="apj-VF-8Uq"/>
+                <constraint firstItem="XDB-aM-00i" firstAttribute="leading" secondItem="onE-ct-Mvw" secondAttribute="trailing" constant="5" id="bg1-CB-BCh"/>
+                <constraint firstItem="Ke5-Qr-uFU" firstAttribute="height" secondItem="J7o-kf-869" secondAttribute="height" id="c3V-71-bM0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MC0-MN-6qE" secondAttribute="bottom" constant="5" id="cMy-R4-fvo"/>
+                <constraint firstItem="PJM-Ab-NQS" firstAttribute="top" secondItem="FAc-RY-KH0" secondAttribute="bottom" constant="5" id="cQa-eb-xxF"/>
+                <constraint firstItem="Lq6-0Y-GJj" firstAttribute="top" secondItem="14V-n9-bxx" secondAttribute="bottom" constant="5" id="csF-pl-VSZ"/>
+                <constraint firstItem="3rU-Jg-wiW" firstAttribute="top" secondItem="vxe-MD-ou5" secondAttribute="bottom" constant="5" id="cuw-2w-5nO"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="width" secondItem="PJM-Ab-NQS" secondAttribute="width" id="d49-F8-ZYK"/>
+                <constraint firstItem="PJM-Ab-NQS" firstAttribute="leading" secondItem="1ud-uh-SPf" secondAttribute="trailing" constant="5" id="d5o-de-Us6"/>
+                <constraint firstItem="vxe-MD-ou5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="db5-5K-WIH"/>
+                <constraint firstItem="a6y-7X-agK" firstAttribute="top" secondItem="HiF-An-pXu" secondAttribute="bottom" constant="5" id="djH-e5-W6I"/>
+                <constraint firstItem="oy0-XR-mco" firstAttribute="width" secondItem="5jb-rW-fge" secondAttribute="width" id="fCO-FU-et7"/>
+                <constraint firstItem="n9C-Tl-pvv" firstAttribute="top" secondItem="a6y-7X-agK" secondAttribute="bottom" constant="5" id="fln-rk-KKn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XDB-aM-00i" secondAttribute="trailing" constant="5" id="gAa-CW-Yd9"/>
+                <constraint firstItem="G9j-gz-dLY" firstAttribute="top" secondItem="J7o-kf-869" secondAttribute="bottom" constant="5" id="heN-gL-NaN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="J7o-kf-869" secondAttribute="trailing" constant="5" id="hlN-JC-ZJ6"/>
+                <constraint firstItem="PJM-Ab-NQS" firstAttribute="height" secondItem="FAc-RY-KH0" secondAttribute="height" id="hzF-CL-Yqn"/>
+                <constraint firstItem="XDB-aM-00i" firstAttribute="top" secondItem="G9j-gz-dLY" secondAttribute="bottom" constant="5" id="iGW-ve-qL7"/>
+                <constraint firstItem="37W-ae-s1b" firstAttribute="top" secondItem="fcH-23-a38" secondAttribute="bottom" constant="5" id="ixd-sP-YTm"/>
+                <constraint firstItem="FAc-RY-KH0" firstAttribute="width" secondItem="A70-nO-ejo" secondAttribute="width" id="jDQ-Sl-y4j"/>
+                <constraint firstItem="fcH-23-a38" firstAttribute="leading" secondItem="baT-1W-gyk" secondAttribute="trailing" constant="5" id="jdO-11-yr1"/>
+                <constraint firstItem="4So-WI-ZWk" firstAttribute="width" secondItem="n9C-Tl-pvv" secondAttribute="width" id="kYm-Pk-760"/>
+                <constraint firstItem="baT-1W-gyk" firstAttribute="height" secondItem="14V-n9-bxx" secondAttribute="height" id="kah-8i-lNV"/>
+                <constraint firstItem="onE-ct-Mvw" firstAttribute="leading" secondItem="85P-Lb-89h" secondAttribute="trailing" constant="5" id="lhM-zq-NeO"/>
+                <constraint firstItem="85P-Lb-89h" firstAttribute="width" secondItem="MC0-MN-6qE" secondAttribute="width" id="mUB-sz-en6"/>
+                <constraint firstItem="FAc-RY-KH0" firstAttribute="leading" secondItem="QW1-N5-ABN" secondAttribute="trailing" constant="5" id="n7l-Wb-PR8"/>
+                <constraint firstItem="37W-ae-s1b" firstAttribute="width" secondItem="ked-gX-dVC" secondAttribute="width" id="nbv-lU-zMj"/>
+                <constraint firstItem="A70-nO-ejo" firstAttribute="top" secondItem="SAe-bF-s0y" secondAttribute="bottom" constant="5" id="nyD-tu-pMb"/>
+                <constraint firstItem="Ke5-Qr-uFU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="qC6-e9-cqQ"/>
+                <constraint firstItem="oy0-XR-mco" firstAttribute="leading" secondItem="MC0-MN-6qE" secondAttribute="trailing" constant="5" id="qNb-Th-4P8"/>
+                <constraint firstItem="Zz7-up-K9E" firstAttribute="centerX" secondItem="Ke5-Qr-uFU" secondAttribute="centerX" id="qSd-Hc-Q8t"/>
+                <constraint firstItem="baT-1W-gyk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="rCW-3q-Lu8"/>
+                <constraint firstItem="3rU-Jg-wiW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="sHa-eO-OE1"/>
+                <constraint firstItem="37W-ae-s1b" firstAttribute="leading" secondItem="14V-n9-bxx" secondAttribute="trailing" constant="5" id="sPT-vx-hzI"/>
+                <constraint firstItem="J7o-kf-869" firstAttribute="top" secondItem="Ke5-Qr-uFU" secondAttribute="bottom" constant="5" id="ssy-Oe-RSD"/>
+                <constraint firstItem="QW1-N5-ABN" firstAttribute="width" secondItem="3rU-Jg-wiW" secondAttribute="width" id="tLg-wt-by6"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="height" secondItem="BQa-fd-Wb3" secondAttribute="height" id="uQ3-RT-WQC"/>
+                <constraint firstItem="fcH-23-a38" firstAttribute="width" secondItem="37W-ae-s1b" secondAttribute="width" id="ueP-Dh-xVN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BQa-fd-Wb3" secondAttribute="bottom" constant="5" id="vM5-9t-228"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G9j-gz-dLY" secondAttribute="trailing" constant="5" id="vlD-Cl-aYb"/>
+                <constraint firstItem="ked-gX-dVC" firstAttribute="leading" secondItem="Lq6-0Y-GJj" secondAttribute="trailing" constant="5" id="ww7-ug-MkD"/>
+                <constraint firstItem="5jb-rW-fge" firstAttribute="top" secondItem="XDB-aM-00i" secondAttribute="bottom" constant="5" id="xAH-8u-65N"/>
+                <constraint firstItem="BQa-fd-Wb3" firstAttribute="width" secondItem="MC0-MN-6qE" secondAttribute="width" id="xfa-2q-k4n"/>
+                <constraint firstItem="MC0-MN-6qE" firstAttribute="top" secondItem="85P-Lb-89h" secondAttribute="bottom" constant="5" id="xit-9C-LAH"/>
+                <constraint firstItem="1ud-uh-SPf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="yCN-rL-5KV"/>
+                <constraint firstItem="dO5-kd-aav" firstAttribute="top" secondItem="PJM-Ab-NQS" secondAttribute="bottom" constant="5" id="zLI-qH-YS5"/>
+                <constraint firstItem="n9C-Tl-pvv" firstAttribute="height" secondItem="a6y-7X-agK" secondAttribute="height" id="zcn-Wi-1YG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow-left" width="85" height="85"/>
+        <image name="arrow-right" width="85" height="85"/>
+        <image name="delete" width="85" height="85"/>
+    </resources>
+</document>
