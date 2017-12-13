@@ -13,26 +13,40 @@ class CalculatorViewController: UIViewController, FormulaDelegate {
 //    @IBOutlet weak var calculatorTextField: CustomCalculatorTextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var calcFormulaView: CalculatorFormulaView!
     
     @IBOutlet weak var solutionView: UIView!
     @IBOutlet weak var solutionLabel: UILabel!
+    
     var toggle: Bool = true;
+    var calcFormulaView: CalculatorFormulaView!
     
     override func viewDidLoad() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleKeyboard));
         tap.cancelsTouchesInView = false;
         scrollView.addGestureRecognizer(tap);
-        
-        self.calcFormulaView.delegate = self;
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        if let scannedValue = UserDefaults.standard.string(forKey: AppDefaultStorage.keyScannedValued) {
+            if scannedValue != self.calcFormulaView.calculatorValue as String {
+                UserDefaults.standard.set(self.calcFormulaView.calculatorValue as String, forKey: AppDefaultStorage.keyScannedValued);
+            }
+        } else {
+            UserDefaults.standard.set(self.calcFormulaView.calculatorValue as String, forKey: AppDefaultStorage.keyScannedValued);
+        }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        if self.calcFormulaView == nil {
+            self.calcFormulaView = CalculatorFormulaView(frame: CGRect(x: 0, y: 0, width: self.scrollView.contentSize.width, height: self.scrollView.contentSize.height));
+            self.calcFormulaView.delegate = self;
+            
+            self.scrollView.addSubview(self.calcFormulaView);
+        }
         
+        if let scannedValue = UserDefaults.standard.string(forKey: AppDefaultStorage.keyScannedValued) {
+            self.calcFormulaView.setCalculatorValueAndUpdate(value: scannedValue);
+        }
     }
     
     override func didReceiveMemoryWarning() {

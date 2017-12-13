@@ -88,7 +88,24 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
         DispatchQueue.main.async(execute: {
             self.cameraView.layer.addSublayer(self.videoPreviewLayer!)
             self.captureSession.startRunning()
-        })
+        });
+        
+        if let scannedValue = UserDefaults.standard.string(forKey: AppDefaultStorage.keyScannedValued) {
+            let calculator = MathCalculator();
+            let calculationResult = calculator.solveEquation(text: scannedValue);
+            
+            let recognizedText = calculationResult["text"] as! String;
+            
+            let formatter = FormatHelper();
+            let formattedResult = formatter.formatAndBeautifySolution(solution: recognizedText);
+            
+            self.solutionView.isHidden = false;
+            self.equationView.isHidden = false;
+            self.solutionEqualLabel.isHidden = true;
+            
+            self.equationLabel.text = scannedValue;
+            self.solutionLabel.text = formattedResult;
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,8 +135,6 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
     }
     
     func updateHeaderAndView(index: Int, progress: CGFloat) {
-        self.cameraTimer?.invalidate();
-        
         self.customDelegate.updateHeaderAndView(index: index, progress: progress);
         
         if index == 1 && progress == 1 {
@@ -143,10 +158,12 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
     
     func transitionDone(index: Int) {
         if index == 1 {
+            self.cameraTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(scanCamera), userInfo: nil, repeats: true);
             self.blockViewInteraction = false;
             return;
         }
         
+        self.cameraTimer?.invalidate();
         self.blockViewInteraction = true;
     }
     
@@ -239,6 +256,8 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
         
         self.equationLabel.text = validationResult["text"] as? String;
         self.solutionLabel.text = formattedResult;
+        
+        UserDefaults.standard.set(validationResult["text"] as? String, forKey: AppDefaultStorage.keyScannedValued);
         
         guard calculationResult["isEqual"] == nil else {
             self.solutionEqualLabel.isHidden = false;

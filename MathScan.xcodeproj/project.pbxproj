@@ -157,30 +157,16 @@
 			children = (
 				C1FF1CD31FCD8A59000FFD8A /* tessdata */,
 				C13F8DAF1FCD665B0097DC7E /* AppDelegate.swift */,
-				C13F8E2B1FCD70EA0097DC7E /* CalculatorFormulaLabel.swift */,
-				C13F8E341FCD70EB0097DC7E /* CalculatorFormulaView.swift */,
-				C13F8E2C1FCD70EA0097DC7E /* CalculatorInputTextField.swift */,
-				C13F8E2A1FCD70EA0097DC7E /* CalculatorKeyboardView.swift */,
-				C13F8E291FCD70EA0097DC7E /* CalculatorViewController.swift */,
-				C13F8E2D1FCD70EA0097DC7E /* CustomCalculatorButton.swift */,
-				C13F8E2F1FCD70EB0097DC7E /* FormatHelper.swift */,
-				C13F8E351FCD70EC0097DC7E /* FormulaHelper.swift */,
-				C13F8E2E1FCD70EB0097DC7E /* MainViewController.swift */,
-				C13F8E321FCD70EB0097DC7E /* MathCalculator.swift */,
-				C13F8E3A1FCD70EC0097DC7E /* MenuPageViewController.swift */,
+				C1FF1CD81FCFF14B000FFD8A /* CalculatorView */,
+				C1FF1CD91FCFF170000FFD8A /* ViewController */,
+				C1FF1CD71FCFF133000FFD8A /* Helper */,
+				C1FF1CDA1FCFF17A000FFD8A /* Custom Views */,
 				C13F8E301FCD70EB0097DC7E /* objc_bridging_header.h */,
 				C13F8E311FCD70EB0097DC7E /* OpenCVWrapper.h */,
 				C13F8E371FCD70EC0097DC7E /* OpenCVWrapper.mm */,
 				C13F8DE41FCD6DCC0097DC7E /* MathScan-Bridging-Header.h */,
-				C13F8E381FCD70EC0097DC7E /* RoundedCornerView.swift */,
-				C13F8E361FCD70EC0097DC7E /* SettingsTableViewController.swift */,
-				C13F8E391FCD70EC0097DC7E /* TransparentView.swift */,
-				C13F8E271FCD70EA0097DC7E /* ValidationHelper.swift */,
-				C13F8E281FCD70EA0097DC7E /* ViewController.swift */,
 				C13F8DB91FCD665B0097DC7E /* Assets.xcassets */,
-				C13F8DD91FCD6BC10097DC7E /* CalculatorKeyboardView.xib */,
-				C13F8DD71FCD6BC10097DC7E /* Main.storyboard */,
-				C1FF1CA81FCD7B46000FFD8A /* LaunchScreen.storyboard */,
+				C1FF1CDB1FCFF1A4000FFD8A /* Storyboard */,
 				C13F8DBE1FCD665B0097DC7E /* Info.plist */,
 				C13F8DB61FCD665B0097DC7E /* MathScan.xcdatamodeld */,
 			);
@@ -195,6 +181,60 @@
 				C13F8E5B1FCD71D60097DC7E /* MathScanTests-Bridging-Header.h */,
 			);
 			path = MathScanTests;
+			sourceTree = "<group>";
+		};
+		C1FF1CD71FCFF133000FFD8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C13F8E321FCD70EB0097DC7E /* MathCalculator.swift */,
+				C13F8E271FCD70EA0097DC7E /* ValidationHelper.swift */,
+				C13F8E2F1FCD70EB0097DC7E /* FormatHelper.swift */,
+				C13F8E351FCD70EC0097DC7E /* FormulaHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C1FF1CD81FCFF14B000FFD8A /* CalculatorView */ = {
+			isa = PBXGroup;
+			children = (
+				C13F8E2B1FCD70EA0097DC7E /* CalculatorFormulaLabel.swift */,
+				C13F8E341FCD70EB0097DC7E /* CalculatorFormulaView.swift */,
+				C13F8E2C1FCD70EA0097DC7E /* CalculatorInputTextField.swift */,
+				C13F8E2A1FCD70EA0097DC7E /* CalculatorKeyboardView.swift */,
+				C13F8E2D1FCD70EA0097DC7E /* CustomCalculatorButton.swift */,
+			);
+			path = CalculatorView;
+			sourceTree = "<group>";
+		};
+		C1FF1CD91FCFF170000FFD8A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C13F8E291FCD70EA0097DC7E /* CalculatorViewController.swift */,
+				C13F8E361FCD70EC0097DC7E /* SettingsTableViewController.swift */,
+				C13F8E2E1FCD70EB0097DC7E /* MainViewController.swift */,
+				C13F8E3A1FCD70EC0097DC7E /* MenuPageViewController.swift */,
+				C13F8E281FCD70EA0097DC7E /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C1FF1CDA1FCFF17A000FFD8A /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				C13F8E381FCD70EC0097DC7E /* RoundedCornerView.swift */,
+				C13F8E391FCD70EC0097DC7E /* TransparentView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		C1FF1CDB1FCFF1A4000FFD8A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C13F8DD91FCD6BC10097DC7E /* CalculatorKeyboardView.xib */,
+				C13F8DD71FCD6BC10097DC7E /* Main.storyboard */,
+				C1FF1CA81FCD7B46000FFD8A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

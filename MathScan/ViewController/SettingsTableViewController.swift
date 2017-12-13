@@ -18,8 +18,24 @@ class SettingsTableViewController: UITableViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func openGitHubTouched(_ sender: UIButton) {
+        guard let url = URL(string: "https://github.com/benediktveith/MathScan") else {
+            return;
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil);
+        } else {
+            UIApplication.shared.openURL(url);
+        }
     }
 }

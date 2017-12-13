@@ -43,6 +43,11 @@ class MenuPageViewController: UIPageViewController, UIPageViewControllerDataSour
         self.view.backgroundColor = UIColor.clear;
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
@@ -100,16 +105,21 @@ class MenuPageViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     
     func scrollToPage(index: Int) {
+        return; // STILL BUGGGGGGGGY
+        
         let viewController = orderedViewControllers[index];
         
-        if index < self.currentIndex {
-            self.setViewControllers([viewController], direction: .reverse, animated: true, completion: nil);
-        } else if index > self.currentIndex {
-            self.setViewControllers([viewController], direction: .forward, animated: true, completion: nil);
+        if self.currentIndex == index {
+            return;
         }
+        
+        self.setViewControllers([viewController], direction: .forward, animated: true, completion: nil);
         
         self.customDelegate.updateScrollHeader(currentIndex: self.currentIndex, index: index, progress: 1);
         self.customDelegate.updateHeaderAndView(index: index, progress: 1);
+
+        self.currentIndex = index;
+        self.transitionDone = true;
     }
     
     // MARK: ScrollView Delegates

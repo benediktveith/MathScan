@@ -37,6 +37,7 @@ class CalculatorKeyboardView : UIView {
     
     @IBOutlet weak var moveLeft: CustomCalculatorButton!
     @IBOutlet weak var moveRight: CustomCalculatorButton!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
         

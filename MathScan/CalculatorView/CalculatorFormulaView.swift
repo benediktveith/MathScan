@@ -64,7 +64,7 @@ class CalculatorFormulaView: UIView, CalculatorBlockDelegate {
         activeTextField.sizeToCorrectWidth();
     }
     
-    func createLayoutOfAllSubviews() {
+    func createLayoutOfAllSubviews(showKeyboard: Bool = true) {
         let basicOperatorParts = self.formulaHelper.getBasicOperatorsFromText(text: self.calculatorValue as String);
         let basicOperatorSeperatedParts = self.formulaHelper.seperateTextWithBasicOperators(text: self.calculatorValue as String);
         
@@ -132,8 +132,8 @@ class CalculatorFormulaView: UIView, CalculatorBlockDelegate {
             totalWidth = subview.frame.maxX;
         }
         
-        self.toggleKeyboard(show: true);
-        self.frame = CGRect(x: 0.0, y: 0.0, width: totalWidth, height: self.frame.height);
+        self.toggleKeyboard(show: showKeyboard);
+        self.frame = CGRect(x: 0.0, y: 0.0, width: totalWidth + 16, height: self.frame.height);
         
         self.delegate.formulaUpdated(formula: self);
     }
@@ -194,6 +194,16 @@ class CalculatorFormulaView: UIView, CalculatorBlockDelegate {
         if self.blockArray.count > blockID {
             self.blockArray.remove(at: blockID);
         }
+    }
+    
+    func setCalculatorValueAndUpdate(value: String) {
+        self.calculatorValue = NSMutableString(string: value);
+        
+        let firstTextField = self.blockArray.first!;
+        self.blockArray = [firstTextField];
+        
+        self.currentActiveBlock = 0;
+        self.createLayoutOfAllSubviews(showKeyboard: false);
     }
     
     // MARK: Textfield Delegates
