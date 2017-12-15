@@ -65,12 +65,17 @@ class ValidationHelper {
     /// - Parameter recognizedText: String
     /// - Parameter recognizedCharacter: [NSArray] -> Array of all recognized Characters and its Tesseract recognized possibilities
     /// - Returns: NSDictionary -> Text valid true / false and valid Text
-    func validateText(recognizedText: String, recognizedCharacter: [NSArray]) -> NSDictionary {
+    func validateText(recognizedText: String, tesseract: G8Tesseract? = nil) -> NSDictionary {
         guard self.checkTextForSingleVariable(text: recognizedText) else {
             return ["valid": false];
         }
         
-        let text = self.correctText(recognizedText: recognizedText, recognizedCharacter: recognizedCharacter);
+        var recognizedCharacters : [NSArray] = [];
+        if tesseract != nil {
+            recognizedCharacters = (tesseract?.characterChoices as! [NSArray]);
+        }
+        
+        let text = self.correctText(recognizedText: recognizedText, recognizedCharacter: recognizedCharacters);
         
         guard !text.isEmpty else {
             return ["valid": false];

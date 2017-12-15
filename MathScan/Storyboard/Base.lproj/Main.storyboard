@@ -120,7 +120,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="BxW-Nd-rkc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="3ZH-Ri-3vZ"/>
+                            <constraint firstItem="BxW-Nd-rkc" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="3ZH-Ri-3vZ"/>
                             <constraint firstItem="1p9-oc-Y23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5NK-fQ-XcJ"/>
                             <constraint firstItem="oAo-ag-5dW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7LQ-G7-uak"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1p9-oc-Y23" secondAttribute="trailing" constant="16" id="85W-GW-rCQ"/>

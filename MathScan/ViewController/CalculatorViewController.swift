@@ -70,7 +70,7 @@ class CalculatorViewController: UIViewController, FormulaDelegate {
         var value = value;
         
         let validationHelper = ValidationHelper();
-        let validationResult = validationHelper.validateText(recognizedText: value, recognizedCharacter: []);
+        let validationResult = validationHelper.validateText(recognizedText: value);
         
         guard validationResult["valid"] as! Bool == true else {
             return;

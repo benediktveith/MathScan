@@ -34,7 +34,6 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
     var capturePhotoOutput: AVCapturePhotoOutput?
     var tesseract: G8Tesseract?
     var cameraTimer: Timer!
-    var tesseractChoices: [NSArray]!
     
     var blockViewInteraction: Bool = false;
     var menuPageViewController: MenuPageViewController?;
@@ -90,22 +89,7 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
             self.captureSession.startRunning()
         });
         
-        if let scannedValue = UserDefaults.standard.string(forKey: AppDefaultStorage.keyScannedValued) {
-            let calculator = MathCalculator();
-            let calculationResult = calculator.solveEquation(text: scannedValue);
-            
-            let recognizedText = calculationResult["text"] as! String;
-            
-            let formatter = FormatHelper();
-            let formattedResult = formatter.formatAndBeautifySolution(solution: recognizedText);
-            
-            self.solutionView.isHidden = false;
-            self.equationView.isHidden = false;
-            self.solutionEqualLabel.isHidden = true;
-            
-            self.equationLabel.text = scannedValue;
-            self.solutionLabel.text = formattedResult;
-        }
+        self.readFromLocalStorage();
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,6 +144,8 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
         if index == 1 {
             self.cameraTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(scanCamera), userInfo: nil, repeats: true);
             self.blockViewInteraction = false;
+            
+            self.readFromLocalStorage();
             return;
         }
         
@@ -178,6 +164,29 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
                     }
                 }
             }
+        }
+    }
+    
+    func readFromLocalStorage() {
+        if let scannedValue = UserDefaults.standard.string(forKey: AppDefaultStorage.keyScannedValued) {
+            if scannedValue == self.equationLabel.text {
+                return;
+            }
+            
+            let calculator = MathCalculator();
+            let calculationResult = calculator.solveEquation(text: scannedValue);
+            
+            let recognizedText = calculationResult["text"] as! String;
+            
+            let formatter = FormatHelper();
+            let formattedResult = formatter.formatAndBeautifySolution(solution: recognizedText);
+            
+            self.solutionView.isHidden = false;
+            self.equationView.isHidden = false;
+            self.solutionEqualLabel.isHidden = true;
+            
+            self.equationLabel.text = scannedValue;
+            self.solutionLabel.text = formattedResult;
         }
     }
     
@@ -211,12 +220,13 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
         // Initialise a UIImage with our image data
         let capturedImage = UIImage.init(data: imageData , scale: 1.0)
         let tenthHeight = (capturedImage?.size.height)! * (self.scanAreaView.frame.height / self.view.frame.height);
+        let correctWidth = (capturedImage?.size.width)! * (self.scanAreaView.frame.width / self.view.frame.width);
         let openCVWrapper = OpenCVWrapper();
         
         self.tesseract?.image = openCVWrapper.preprocessImage(capturedImage?.g8_blackAndWhite());
         
         // Only OCR Scan Area of Image
-        self.tesseract?.rect = CGRect(x: (capturedImage?.size.width)! / 8, y: (capturedImage?.size.height)! / 2 - tenthHeight / 2, width: (capturedImage?.size.width)! - ((capturedImage?.size.width)! / 8), height: tenthHeight)
+        self.tesseract?.rect = CGRect(x: (capturedImage?.size.width)! / 2 - correctWidth / 2, y: (capturedImage?.size.height)! / 2 - tenthHeight / 2, width: correctWidth, height: tenthHeight);
         self.tesseract?.recognize();
         self.tesseract?.engineMode = G8OCREngineMode.tesseractOnly;
         self.tesseract?.charWhitelist = "abcdefghijklmnopqrstuvwxyz1234567890=+-.,";
@@ -226,15 +236,8 @@ class ViewController: UIViewController, G8TesseractDelegate, AVCapturePhotoCaptu
             return;
         }
         
-        do {
-            try self.tesseractChoices = self.tesseract?.characterChoices as! [NSArray];
-        } catch {
-            return;
-        }
-        
-        
         let validationHelper = ValidationHelper();
-        let validationResult = validationHelper.validateText(recognizedText: recognizedText, recognizedCharacter: self.tesseractChoices);
+        let validationResult = validationHelper.validateText(recognizedText: recognizedText, tesseract: self.tesseract!);
         
         guard validationResult["valid"] as! Bool == true else {
             return;

@@ -41,6 +41,11 @@ class MainViewController: UIViewController, ViewControllerDelegate {
     func updateScrollHeader(currentIndex: Int, index: Int, progress: CGFloat) {
         let isScrollingRight : CGFloat = (currentIndex < index) ? 1.0 : -1.0;
         
+        if (currentIndex - index) < -1 || (currentIndex - index) > 1 {
+            self.headerScrollView.setContentOffset(CGPoint(x: CGFloat(40 * (index - 1)), y: 0), animated: false);
+            return;
+        }
+        
         self.headerScrollView.setContentOffset(CGPoint(x: CGFloat(40 * (currentIndex - 1)) + isScrollingRight * 40 * progress, y: 0), animated: false);
     }
     

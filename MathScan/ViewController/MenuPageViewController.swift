@@ -105,21 +105,20 @@ class MenuPageViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     
     func scrollToPage(index: Int) {
-        return; // STILL BUGGGGGGGGY
-        
         let viewController = orderedViewControllers[index];
         
         if self.currentIndex == index {
             return;
         }
         
-        self.setViewControllers([viewController], direction: .forward, animated: true, completion: nil);
+        self.setViewControllers([viewController], direction: .forward, animated: false, completion: nil);
         
         self.customDelegate.updateScrollHeader(currentIndex: self.currentIndex, index: index, progress: 1);
         self.customDelegate.updateHeaderAndView(index: index, progress: 1);
 
         self.currentIndex = index;
         self.transitionDone = true;
+        customDelegate.transitionDone(index: index);
     }
     
     // MARK: ScrollView Delegates
